@@ -1,17 +1,18 @@
 #include<stdio.h>
 #include<conio.h>
 
-void cube(int *p, int n)
+void cube(int a[10][10], int n)
 {
-    int i;
+    int i, j;
 
-    for(i=0; i<n*n; i++)
+    for(i=0; i<n; i++)
     {
-        printf("%d ", (*p) * (*p) * (*p));
-        p++;
-        
-        if((i+1) % n == 0)
-            printf("\n");
+        for(j=0; j<n; j++)
+        {
+            printf("%d ", a[i][j] * a[i][j] * a[i][j]);
+        }
+
+        printf("\n");
     }
 }
 
@@ -37,7 +38,7 @@ void main()
 
     printf("\nCubes of all elements:\n");
 
-    cube(&a[0][0], n);
+    cube(a, n);
 
     getch();
 }
